@@ -1,3 +1,11 @@
+---
+layout: post
+category : pebble
+tagline: "Quick writedown"
+tags : [pebble, smartwatch, install, tutorial]
+---
+{% include JB/setup %}
+
 I had to face some problems while installing Pebble SDK with [this guide](https://developer.getpebble.com/2/getting-started/macosx/). So i wrote down what was working in my case.
     
     echo 'export PATH=~/pebble-dev/PebbleSDK-2.0-BETA5/bin:$PATH' >> ~/.bash_profile 
