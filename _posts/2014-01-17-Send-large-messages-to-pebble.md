@@ -3,7 +3,7 @@ layout: post
 category : pebble
 tagline: "on iOS"
 tags : [pebble, smartwatch, AppMessage, AppSync, tutorial]
-excerpt: As i tried to build a communication between my iOS and Pebble App like in [this example](https://github.com/pebble/pebble-sdk-examples/blob/master/todolist-demo/todo_list/src/todo_list.c), i ran into issues with the message size really fast.
+excerpt: As i tried to build a communication between my iOS and Pebble App like in this example, i ran into issues with the message size really fast.
 ---
 {% include JB/setup %}
 
