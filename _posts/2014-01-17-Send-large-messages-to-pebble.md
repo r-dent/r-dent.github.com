@@ -108,6 +108,8 @@ So finally i added a queue to that approach.
 This now worked for me. The messages are were all transferred to the watch. Yippie!
 A drawback of this method is that i now see the ui patially updating as the messages are dropping in. But that can be solved by a buffer on the watch side, i guess.
 
+##On the Watch
+
 For now i just write the values direcly on the screen. I use AppSync on the watch to manage message receiving and ui updating.
 
     void sync_tuple_changed_callback(const uint32_t key, const Tuple* new_tuple, const Tuple* old_tuple, void* context) {
@@ -135,5 +137,7 @@ For now i just write the values direcly on the screen. I use AppSync on the watc
     
       app_sync_init(&sync, sync_buffer, sizeof(sync_buffer), initial_data, ARRAY_LENGTH(initial_data), sync_tuple_changed_callback, sync_error_callback, NULL);
     }
+
+##Conclusion
 
 I´m happy with my approach for now. I am now able to send a "large" object to the watch and handle it there. However, the limitations of the watch app are hard to get accustomed with when coming from iOS. 
