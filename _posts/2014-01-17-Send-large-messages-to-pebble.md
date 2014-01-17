@@ -3,7 +3,7 @@ layout: post
 category : pebble
 tagline: "on iOS"
 tags : [pebble, smartwatch, AppMessage, AppSync, tutorial]
-excerpt:
+excerpt: As i tried to build a communication between my iOS and Pebble App like in [this example](https://github.com/pebble/pebble-sdk-examples/blob/master/todolist-demo/todo_list/src/todo_list.c), i ran into issues with the message size really fast.
 ---
 {% include JB/setup %}
 
@@ -47,6 +47,8 @@ The title and properties of the object are NSStrings between 10 and 50 character
 This brought me an error code 128. Possible values are described [here](https://developer.getpebble.com/2/api-reference/group___app_message.html#ga695a78c926b20edbb14d7faf5a78c29e). But lacking a mapping between int and enum i could just guess that it was a buffer overflow.
 After banging my head against the wall a while, not beleving that these messages are that limited in size, i finally got it and tried a different approach.
 
+##Splitting up the Message
+
 This time i tried to send each property at once.
 
     - (void)sendObjectToWatch:(MyObject*)object {
@@ -67,6 +69,8 @@ This time i tried to send each property at once.
     }
     
 This way, a good part of the messages arrived. The other part fired an error 64 on the watch side. My thought was that i might send them too fast.
+
+##Final approach: Waiting for the ACK
 
 So finally i added a queue to that approach.
 
