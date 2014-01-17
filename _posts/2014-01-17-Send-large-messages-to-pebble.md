@@ -110,7 +110,7 @@ A drawback of this method is that i now see the ui patially updating as the mess
 
 ##On the Watch
 
-For now i just write the values direcly on the screen. I use AppSync on the watch to manage message receiving and ui updating.
+For now i just write the values direcly on the screen. I use [AppSync](https://developer.getpebble.com/2/api-reference/group___app_sync.html)(Usage covered in [this article](https://developer.getpebble.com/2/guides/app-phone-communication.html)) on the watch to manage message receiving and ui updating.
 
     void sync_tuple_changed_callback(const uint32_t key, const Tuple* new_tuple, const Tuple* old_tuple, void* context) {
       APP_LOG(APP_LOG_LEVEL_DEBUG, "Received message.");
