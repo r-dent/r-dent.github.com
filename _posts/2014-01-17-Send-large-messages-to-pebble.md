@@ -81,7 +81,7 @@ So finally i added a queue to that approach.
         ...
         for (NSNumber *key in message) {
           NSDictionary *part = @{key: message[key]}
-          [self sendMessage:message];
+          [self sendMessage:part];
         }
     }
     
