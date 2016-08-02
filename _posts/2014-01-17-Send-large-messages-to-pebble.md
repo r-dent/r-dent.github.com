@@ -49,7 +49,7 @@ After banging my head against the wall a while, not beleving that these messages
 
 ##Splitting up the Message
 
-This time i tried to send each property at once.
+This time i tried to send each property separately.
 
     - (void)sendObjectToWatch:(MyObject*)object {
         NSDictionary *message = @{@(ENTITY_TITLE): object.title,
